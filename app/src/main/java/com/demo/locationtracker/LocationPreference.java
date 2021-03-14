@@ -30,13 +30,15 @@ public class LocationPreference {
         editor.apply();
     }
 
-    public void saveList(List<MyApp.Location> locationList){
+    public void saveLocation(MyApp.Location location){
+        List<MyApp.Location> locationList = getLocation();
+        locationList.add(location);
         String locationJSONList = new Gson().toJson(locationList);
         editor.putString(LIST_NAME, locationJSONList);
         editor.apply();
     }
 
-    public List<MyApp.Location> getList(){
+    public List<MyApp.Location> getLocation(){
         String locationJSONList = mPref.getString(LIST_NAME, null);
         List<MyApp.Location> locationList =
                 new Gson().fromJson(locationJSONList, new TypeToken<List<MyApp.Location>>(){}.getType());
