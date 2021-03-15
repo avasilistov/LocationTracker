@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">LocationTracker</string>
     <string name="gret_notification">Hello, this is location notification</string>
+    <string name="location_updated">"Location  updated: %1$s"</string>
+    <string name="request_location_updates">Request location updates</string>
+    <string name="remove_location_updates">Remove location updates</string>
+    <string name="permission_rationale">This App needs location permission</string>
+    <string name="ok">OK</string>
+    <string name="permission_denied_explanation">Sorry, can\'t to determine your location </string>
+    <string name="settings">Settings</string>
 </resources>

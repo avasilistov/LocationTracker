@@ -13,7 +13,7 @@ import androidx.core.app.NotificationCompat;
 import static com.demo.locationtracker.MyApp.CHANNEL_ID;
 
 public class LocationService extends Service {
-
+    public static final String NOTIFICATION = "com.demo.locationtracker";
 
     @Override
     public void onCreate() {
@@ -36,7 +36,17 @@ public class LocationService extends Service {
 
         startForeground(1, notification);
 
+
         return START_STICKY;
+    }
+
+
+
+    private void publishLocation(MyApp.Location location){
+        Intent intent = new Intent(NOTIFICATION);
+        intent.putExtra("latitude", location.getLatitude());
+        intent.putExtra("longitude", location.getLongitude());
+        sendBroadcast(intent);
     }
 
     @Override

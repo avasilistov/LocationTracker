@@ -3,7 +3,11 @@
     package="com.demo.locationtracker">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:name=".MyApp"
@@ -15,7 +19,9 @@
         android:theme="@style/Theme.LocationTracker">
         <service
             android:name=".LocationService"
-            android:foregroundServiceType="location" />
+            android:foregroundServiceType="location"
+            android:enabled="true"
+            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
